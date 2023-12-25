@@ -10,9 +10,17 @@ const useTodoService = () => {
     const getAll = async () => {
         return axios.get<ITodo[]>(`${URL}/?_start=0&_limit=8`)
     }
+    const createTodo = async (title: string) => {
+        return axios.post(URL, {
+            title,
+            userId: 1,
+            completed: false,
+        })
+    }
     return {
         getById,
         getAll,
+        createTodo,
     }
 }
 
