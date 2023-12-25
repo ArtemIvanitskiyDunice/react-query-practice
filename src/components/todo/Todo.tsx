@@ -11,7 +11,10 @@ const Todo = ({ todoId, setTodoId } : {todoId: number, setTodoId: React.Dispatch
             {isLoading ? (
                 <div> Загрузка...</div>
             ) : data ? (
-                <h1>Todo: {data.title}</h1>
+                <div>
+                    <h1>Todo {data.id}:</h1>
+                    <div>{data.title}</div>
+                </div>
             ) : isError ? (
                 <div>Error: {error.message}</div>
             ) : isFetching ? (

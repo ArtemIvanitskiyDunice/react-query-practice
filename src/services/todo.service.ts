@@ -8,7 +8,7 @@ const useTodoService = () => {
         return axios.get<ITodo>(`${URL}/${id}`)
     }
     const getAll = async () => {
-        return axios.get<ITodo[]>(`${URL}`)
+        return axios.get<ITodo[]>(`${URL}/?_start=0&_limit=8`)
     }
     return {
         getById,
