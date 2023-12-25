@@ -1,7 +1,7 @@
 import { useTodos } from '../../hooks/useTodos'
 import { ITodo } from '../../interfaces/app.interface'
 
-const Todos = ({ setTodoId }) => {
+const Todos = ({ setTodoId } : {setTodoId: React.Dispatch<React.SetStateAction<number>>}) => {
     const { isLoading, isError, isFetching, error, data } = useTodos()
 
     function renderItems(arr: ITodo[]) {
@@ -9,7 +9,7 @@ const Todos = ({ setTodoId }) => {
             return (
                 <li key={item.id}>
                     <a onClick={() => setTodoId(item.id)} href="#">
-                        {item.title}
+                        {item.id}: {item.title}
                     </a>
                 </li>
             )

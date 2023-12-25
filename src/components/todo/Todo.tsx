@@ -1,6 +1,6 @@
 import { useTodo } from '../../hooks/useTodo'
 
-const Todo = ({ todoId, setTodoId }) => {
+const Todo = ({ todoId, setTodoId } : {todoId: number, setTodoId: React.Dispatch<React.SetStateAction<number>>}) => {
     const { isLoading, isError, isFetching, error, data } = useTodo(todoId)
 
     return (
