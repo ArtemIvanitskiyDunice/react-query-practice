@@ -31,7 +31,10 @@ const Todos = ({ setTodoId } : {setTodoId: React.Dispatch<React.SetStateAction<n
             {isLoading ? (
                 <div> Загрузка...</div>
             ) : data ? (
-                <h1>Todos: {todos}</h1>
+                <div>
+                    <h1>Todos:</h1>
+                    <div>{todos}</div>
+                </div>
             ) : isError ? (
                 <div>Error: {error.message}</div>
             ) : isFetching ? (
