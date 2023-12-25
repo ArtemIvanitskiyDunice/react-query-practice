@@ -1,23 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
 import { ITodo } from './app.interface'
-import useTodoService from './services/todo.service';
-
-
-const todoId = 1
+import { useTodos } from './hooks/useTodos'
 
 function App() {
-    const {getAll, getById}  = useTodoService();
-
-    const { isLoading, isError, error, data } = useQuery({
-        queryKey: ['todos'],
-        //ключ для взаимодействия react-query
-        queryFn: () => getAll(),
-        select: ({ data }) => data,
-        //select позволяет после успешного получения данных их трансформировать на стороне react-query
-    })
-
+    const { isLoading, isError, error, data } = useTodos();
     if (isError) {
         return <span>Error: {error.message}</span>
+        //обработка ошибок react-query
     }
 
     function renderItems (arr: ITodo[]) {
