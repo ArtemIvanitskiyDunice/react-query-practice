@@ -1,8 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import useTodoService from "../services/todo.service";
+import { useQuery } from '@tanstack/react-query'
+import useTodoService from '../services/todo.service'
 
 export const useTodos = () => {
-    const {getAll} = useTodoService();
+    const { getAll } = useTodoService()
     return useQuery({
         queryKey: ['todos'],
         //ключ для взаимодействия react-query
