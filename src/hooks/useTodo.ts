@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import useTodoService from "../services/todo.service"
 
-export const useTodo = (todoId) => {
+export const useTodo = (todoId: string) => {
     const { getById } = useTodoService()
     return useQuery({
         queryKey: ['todo', todoId],
