@@ -1,5 +1,5 @@
 import { useTodos } from '../../hooks/useTodos'
-import { ITodo } from '../../app.interface'
+import { ITodo } from '../../interfaces/app.interface'
 
 const Todos = ({ setTodoId }) => {
     const { isLoading, isError, isFetching, error, data } = useTodos()

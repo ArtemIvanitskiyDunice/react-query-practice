@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ITodo } from '../app.interface'
+import { ITodo } from '../interfaces/app.interface'
 
 const useTodoService = () => {
     const URL = 'https://jsonplaceholder.typicode.com/todos'
